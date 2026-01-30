@@ -1,0 +1,21 @@
+{
+  "name": "agent1",
+  "version": "1.0.0",
+  "description": "Agent using A2A SDK and OpenAI Codex",
+  "main": "src/server.ts",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-strip-types src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@a2a-js/sdk": "^0.3.9",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.11.17",
+    "typescript": "^5.1.3"
+  }
+}

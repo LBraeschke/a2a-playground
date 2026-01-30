@@ -1,0 +1,39 @@
+{
+  "inputs": [
+    {
+      "id": "context7_key",
+      "type": "promptString",
+      "description": "Context7 API Key"
+    },
+    {
+      "id": "root_folder",
+      "type": "promptString",
+      "description": "Root folder path (e.g., C:/projects/examples/a2a-playground)"
+    }
+  ],
+
+  "servers": {
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "${input:context7_key}"
+      ]
+    },
+    "agent1-db": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@bytebase/dbhub",
+        "--transport",
+        "stdio",
+        "--dsn",
+        "sqlite:///${input:root_folder}/agent1/db/data.db"
+      ]
+    }
+  }
+}
