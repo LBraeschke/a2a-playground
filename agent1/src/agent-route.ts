@@ -18,9 +18,7 @@ export const helloAgentCard: AgentCard = {
   protocolVersion: "0.3.0",
   version: "0.1.0",
   url: "http://localhost:4000", // The public URL of your agent server
-  skills: [
-    { id: "chat", name: "Chat", description: "Say hello", tags: ["chat"] },
-  ],
+  skills: [{ id: "chat", name: "Chat", description: "Say hello", tags: ["chat"] }],
   capabilities: {
     pushNotifications: false,
   },
@@ -43,10 +41,7 @@ class HelloExecutor implements AgentExecutor {
     // Extract the user's message text
     const userMessage =
       requestContext.userMessage?.parts
-        ?.filter(
-          (part): part is { kind: "text"; text: string } =>
-            part.kind === "text",
-        )
+        ?.filter((part): part is { kind: "text"; text: string } => part.kind === "text")
         ?.map((part) => part.text)
         ?.join(" ") || "";
 
@@ -63,9 +58,7 @@ class HelloExecutor implements AgentExecutor {
       kind: "message",
       messageId: uuidv4(),
       role: "agent",
-      parts: [
-        { kind: "text", text: agentResponse || "No response from agent" },
-      ],
+      parts: [{ kind: "text", text: agentResponse || "No response from agent" }],
       // Associate the response with the incoming request's context.
       contextId: requestContext.contextId,
     };

@@ -4,6 +4,16 @@ Express-based A2A server that hosts the “Cake Baker Assistant”.
 
 ## Run (host)
 
+From the repo root you can run:
+
+```bash
+npm install
+npm run install:all
+npm run agent
+```
+
+Or run directly from this folder:
+
 ```bash
 npm install
 npm start

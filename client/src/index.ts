@@ -1,8 +1,5 @@
 import { ClientFactory } from "@a2a-js/sdk/client";
-import type {
-  Message,
-  MessageSendParams
-} from "@a2a-js/sdk";
+import type { Message, MessageSendParams } from "@a2a-js/sdk";
 import { v4 as uuidv4 } from "uuid";
 
 async function run() {
@@ -11,7 +8,6 @@ async function run() {
   // createFromUrl accepts baseUrl and optional path,
   // (the default path is /.well-known/agent-card.json)
   const client = await factory.createFromUrl("http://localhost:4000");
-
 
   const sendParams: MessageSendParams = {
     message: {

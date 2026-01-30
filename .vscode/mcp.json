@@ -16,12 +16,7 @@
     "context7": {
       "type": "stdio",
       "command": "npx",
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "${input:context7_key}"
-      ]
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "${input:context7_key}"]
     },
     "agent1-db": {
       "type": "stdio",

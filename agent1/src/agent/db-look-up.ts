@@ -1,10 +1,4 @@
-import {
-  Agent,
-  run,
-  setDefaultOpenAIClient,
-  setOpenAIAPI,
-  tool,
-} from "@openai/agents";
+import { Agent, run, setDefaultOpenAIClient, setOpenAIAPI, tool } from "@openai/agents";
 import OpenAI from "openai";
 import { z } from "zod";
 import { get, getAll, has } from "../db/key-value.ts";
@@ -32,9 +26,7 @@ export const cakeLookupTool = tool({
   parameters: z.object({
     key: z
       .string()
-      .describe(
-        "The cake name to look up (e.g., chocolate_cake, red_velvet, tiramisu)",
-      ),
+      .describe("The cake name to look up (e.g., chocolate_cake, red_velvet, tiramisu)"),
   }),
   execute: async ({ key }) => {
     if (!has(key)) {

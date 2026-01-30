@@ -1,9 +1,5 @@
 import express from "express";
-import {
-  agentCardHandler,
-  restHandler,
-  UserBuilder,
-} from "@a2a-js/sdk/server/express";
+import { agentCardHandler, restHandler, UserBuilder } from "@a2a-js/sdk/server/express";
 import { agentCardPath, createRequestHandler } from "./agent-route.ts";
 
 // 1. Set up the server.
@@ -15,10 +11,7 @@ app.get("/health", (_req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
-app.use(
-  `/${agentCardPath}`,
-  agentCardHandler({ agentCardProvider: requestHandler }),
-);
+app.use(`/${agentCardPath}`, agentCardHandler({ agentCardProvider: requestHandler }));
 app.use(
   "/a2a/rest",
   restHandler({ requestHandler, userBuilder: UserBuilder.noAuthentication }),

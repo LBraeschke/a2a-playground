@@ -8,12 +8,19 @@ Small Agent-to-Agent (A2A) playground with:
 
 ## Quick start (host)
 
+### 0) Install dependencies
+
+There are two Node projects. You can install per-folder, or install both via Lerna:
+
+```bash
+npm install
+npm run install:all
+```
+
 ### 1) Start the agent server
 
 ```bash
-cd agent1
-npm install
-npm run start:watch
+npm run agent:watch
 ```
 
 Server listens on `http://localhost:4000` and exposes `GET /health`.
@@ -21,9 +28,7 @@ Server listens on `http://localhost:4000` and exposes `GET /health`.
 ### 2) Run the client
 
 ```bash
-cd client
-npm install
-npm start
+npm run client
 ```
 
 ## Docker
